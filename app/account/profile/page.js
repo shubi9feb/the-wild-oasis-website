@@ -1,11 +1,13 @@
+import SelectCountry from "../../_components/SelectCountry";
+
 export const metadata = {
   title: "Update profile",
 };
 
 export default function Page() {
   // CHANGE
-  // const countryFlag = "pt.jpg";
-  // const nationality = "portugal";
+  const countryFlag = "pt.jpg";
+  const nationality = "portugal";
 
   return (
     <div>
@@ -35,7 +37,7 @@ export default function Page() {
           />
         </div>
 
-        {/* <div className="space-y-2">
+        <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label htmlFor="nationality">Where are you from?</label>
             <img
@@ -45,7 +47,7 @@ export default function Page() {
             />
           </div>
 
-          <SelectCountry
+          <SelectCountry4
             name="nationality"
             id="nationality"
             className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
@@ -65,7 +67,7 @@ export default function Page() {
           <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
             Update profile
           </button>
-        </div> */}
+        </div>
       </form>
     </div>
   );
