@@ -1,3 +1,26 @@
+// {
+//   "extends": "next/core-web-vitals",
+//   "parser": "@babel/eslint-parser",
+//   "parserOptions": {
+//     "requireConfigFile": false,
+//     "babelOptions": {
+//       "presets": ["next/babel"]
+//     },
+//     "ecmaVersion": 2020,
+//     "sourceType": "module"
+//   },
+//   "rules": {
+//     "react/prop-types": "off"
+//   }
+// }
+
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/prop-types": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  }
 }
