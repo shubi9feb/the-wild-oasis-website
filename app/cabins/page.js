@@ -3,6 +3,7 @@ import CabinList from "../_components/CabinList";
 import { getCabins } from "../_lib/data-service";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 export const metadata = {
   title: "Cabins",
@@ -12,6 +13,7 @@ export const metadata = {
 export default async function Page({ searchParams }) {
   // CHANGE
   const filter = searchParams?.capacity ?? "all";
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -26,8 +28,9 @@ export default async function Page({ searchParams }) {
         to paradise.
       </p>
       <Filter />
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );
