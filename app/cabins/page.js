@@ -1,17 +1,18 @@
 import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
-import { getCabins } from "../_lib/data-service";
 import Spinner from "../_components/Spinner";
+// import Counter from "../_components/Counter";
 import Filter from "../_components/Filter";
 import ReservationReminder from "../_components/ReservationReminder";
 
+export const revalidate = 3600;
+// export const revalidate = 15;
+
 export const metadata = {
   title: "Cabins",
-  description:
-    "Cozy yet luxurious cabins, located right in the heart of the Italian Dolomites. Imagine waking up to beautiful mountain views, spending your days exploring the dark forests around, or just relaxing in your private hot tub under the stars. Enjoy nature's beauty in your own little home away from home. The perfect spot for a peaceful, calm vacation. Welcome to paradise.",
 };
-export default async function Page({ searchParams }) {
-  // CHANGE
+
+export default function Page({ searchParams }) {
   const filter = searchParams?.capacity ?? "all";
 
   return (
@@ -23,11 +24,15 @@ export default async function Page({ searchParams }) {
         Cozy yet luxurious cabins, located right in the heart of the Italian
         Dolomites. Imagine waking up to beautiful mountain views, spending your
         days exploring the dark forests around, or just relaxing in your private
-        hot tub under the stars. Enjoy nature's beauty in your own little home
-        away from home. The perfect spot for a peaceful, calm vacation. Welcome
-        to paradise.
+        hot tub under the stars. Enjoy nature&apos;s beauty in your own little
+        home away from home. The perfect spot for a peaceful, calm vacation.
+        Welcome to paradise.
       </p>
-      <Filter />
+
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
         <ReservationReminder />
