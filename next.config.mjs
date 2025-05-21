@@ -11,6 +11,10 @@ const nextConfig = {
       },
     ],
   },
+  eslint: {
+    // This tells Next.js to respect your custom ESLint config during build
+    ignoreDuringBuilds: false,
+  },
 };
 
 export default nextConfig;
