@@ -17,7 +17,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react/prop-types": "off"
+    "react/prop-types": "off","react/no-unescaped-entities": "off", "@next/next/no-img-element": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2020,
